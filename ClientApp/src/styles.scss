@@ -1,0 +1,23 @@
+$font-color: #442C2E;
+
+@import '~@angular/material/theming';
+
+$custom-typography: mat-typography-config($font-family: '"B612 Mono", monospace;');
+@include mat-core($custom-typography);
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  color: $font-color;
+  background-color: #FFFBFA;
+}
+
+body {
+  margin: 0;
+  // font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  &.hidden {
+    overflow: hidden;
+  }
+}
