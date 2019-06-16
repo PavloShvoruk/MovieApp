@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -8,17 +9,27 @@ import { MaterialModule } from "src/material-module";
 import { MainNavComponent } from "./main-nav/main-nav.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { MainContentComponent } from "./main-content/main-content.component";
+import { ShowListComponent } from "./show-list/show-list.component";
+import { ShowItemComponent } from "./show-item/show-item.component";
+import { ShowService } from "./services/show.service";
 
 @NgModule({
-  declarations: [AppComponent, MainNavComponent, MainContentComponent],
+  declarations: [
+    AppComponent,
+    MainNavComponent,
+    MainContentComponent,
+    ShowListComponent,
+    ShowItemComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MaterialModule,
     LayoutModule
   ],
-  providers: [],
+  providers: [ShowService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

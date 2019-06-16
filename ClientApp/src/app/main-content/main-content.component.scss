@@ -1,0 +1,24 @@
+@import "../../scss/media-queries.scss";
+
+.container {
+  position: relative;
+
+  &-image {
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+    filter: alpha(opacity=50);
+
+    @include desktop-min {
+      height: 500px;
+    }
+  }
+
+  &-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+  }
+}

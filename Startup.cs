@@ -7,6 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MovieApp.Models;
+using MovieDb.Lib.Season;
+using MovieDb.Lib.Services;
+using MovieDb.Lib.Show;
+using System;
 
 namespace MovieApp
 {
@@ -23,6 +27,10 @@ namespace MovieApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton<IMovieService, MovieService>();
+            services.AddHttpClient<IGetShow, GetShow>();
+            services.AddHttpClient<IGetSeasons, GetSeasons>();
+            AppContext.SetSwitch("System.Net.Http.UseSocketsHttpHandler", false);
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -1,0 +1,12 @@
+@import "../../scss/media-queries.scss";
+
+.list-container {
+  @include desktop-min {
+    margin-top: 5rem;
+    margin-left: 3rem;
+  }
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
