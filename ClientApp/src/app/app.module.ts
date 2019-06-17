@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -12,6 +13,7 @@ import { MainContentComponent } from "./main-content/main-content.component";
 import { ShowListComponent } from "./show-list/show-list.component";
 import { ShowItemComponent } from "./show-item/show-item.component";
 import { ShowService } from "./services/show.service";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
   declarations: [
@@ -19,10 +21,13 @@ import { ShowService } from "./services/show.service";
     MainNavComponent,
     MainContentComponent,
     ShowListComponent,
-    ShowItemComponent
+    ShowItemComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,

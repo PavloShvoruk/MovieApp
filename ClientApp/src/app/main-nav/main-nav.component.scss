@@ -27,16 +27,17 @@
   margin-left: 30px;
 }
 
-mat-nav-list {
-  margin-top: 20px;
-}
-
 .list-item {
-  height: 90px !important;
+  height: 120px !important;
   text-align: center;
-}
 
-.icon-container {
-  display: block;
-  white-space: nowrap;
+  &-wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-icon {
+    font-size: 34px;
+  }
 }

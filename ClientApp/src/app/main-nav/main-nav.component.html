@@ -5,18 +5,28 @@
     <mat-toolbar></mat-toolbar>
     <mat-nav-list>
       <a class="list-item" mat-list-item routerLink="">
-        <i class="material-icons">
-          star_border
-        </i>
-        Popular</a>
-      <a class="list-item" mat-list-item routerLink="">
-        <i class="material-icons">
-          whatshot
-        </i> Top Rated
+        <div class="list-item-wrapper">
+          <i class="material-icons list-item-icon">
+            star_border
+          </i>
+          <span class="list-item-text">Popular</span>
+        </div>
       </a>
-      <a class="list-item" mat-list-item routerLink=""><i class="material-icons">
-          fiber_new
-        </i>Latest</a>
+      <a class="list-item" mat-list-item routerLink="">
+        <div class="list-item-wrapper">
+          <i class="material-icons list-item-icon">
+            trending_up
+          </i>
+          <span class="list-item-text">Top Rated</span>
+        </div>
+      </a>
+      <a class="list-item" mat-list-item routerLink="">
+        <div class="list-item-wrapper">
+          <i class="material-icons list-item-icon">
+            fiber_new
+          </i> <span class="list-item-text">Latest</span>
+        </div>
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -29,9 +39,14 @@
         <input (focus)="checkPlaceholder()" (blur)="checkPlaceholder()" matInput placeholder=" {{placeHolder}} ">
       </mat-form-field>
       <span class="spacer"></span>
-      <button mat-icon-button [matMenuTriggerFor]="menu" class="nav-details">
+
+      <a mat-button class="nav-details">
+        <mat-icon>person</mat-icon>LOG IN
+      </a>
+
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menu" class="nav-details">
         <mat-icon>more_vert</mat-icon>
-      </button>
+      </button> -->
       <mat-menu #menu="matMenu">
         <button mat-menu-item>
           <mat-icon>notifications_off</mat-icon>
