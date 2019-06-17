@@ -41,6 +41,14 @@ namespace MovieApp.Controllers
             return Ok(result);
         }
 
+        // GET: api/Show/Latest
+        [HttpGet("Latest", Name = "GetLatestShows")]
+        public async Task<IActionResult> GetLatestShowsAsync()
+        {
+            var result = await _movieService.GetLatestShows();
+            return Ok(result);
+        }
+
         // GET: api/Show/Seasons/id
         [HttpGet("Seasons/{id}", Name = "GetShowSeasons")]
         public async Task<IActionResult> GetShowSeasonsAsync(int id)

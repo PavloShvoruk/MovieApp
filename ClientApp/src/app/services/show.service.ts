@@ -38,4 +38,19 @@ export class ShowService {
       }
     );
   }
+
+  getLatestShows(shows: any[], shortList: boolean) {
+    this.http.get(`${this.baseUrl}api/Show/Latest`).subscribe(
+      (response: any) => {
+        if (shortList) {
+          shows.push(...response.results.slice(0, 4));
+        } else {
+          shows.push(...response.results);
+        }
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 }

@@ -1,7 +1,7 @@
 <div class="list-container">
   <h2 class="mat-h2">{{ title }}</h2>
   <ul class="list">
-    <li class="list-item" *ngFor="let show of showsPopular">
+    <li class="list-item" *ngFor="let show of shows">
       <app-show-item [id]="show.id" [title]="show.name" [poster]="show.poster_path" [votes]="show.vote_average">
       </app-show-item>
     </li>

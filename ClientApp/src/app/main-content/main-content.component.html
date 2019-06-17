@@ -3,5 +3,4 @@
   <div class="container-title">
   </div>
 </div>
-<app-show-list></app-show-list>
-<app-show-list></app-show-list>
+<app-show-list *ngFor="let category of categories" [category]="category.query" [title]="category.title"></app-show-list>

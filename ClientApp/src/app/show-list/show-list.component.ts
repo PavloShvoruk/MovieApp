@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
 import { ShowService } from "../services/show.service";
+import { Input } from "@angular/core";
 
 @Component({
   selector: "app-show-list",
@@ -8,16 +8,21 @@ import { ShowService } from "../services/show.service";
   styleUrls: ["./show-list.component.scss"]
 })
 export class ShowListComponent implements OnInit {
-  title: string = "Popular Shows";
-  showsPopular: any = [];
-  showsTopRated: any = [];
+  @Input() category: string;
+  @Input() title: string;
+
+  shows: any = [];
 
   constructor(private showService: ShowService) {}
 
   async ngOnInit() {
-    await this.showService.getPopularShows(this.showsPopular, true);
-    console.log(this.showsPopular);
-    await this.showService.getTopRatedShows(this.showsTopRated, true);
-    console.log(this.showsTopRated);
+    console.log(this.category);
+    if (this.category == "popular") {
+      await this.showService.getPopularShows(this.shows, true);
+    } else if (this.category == "topRated") {
+      await this.showService.getTopRatedShows(this.shows, true);
+    } else if (this.category == "latest") {
+      await this.showService.getLatestShows(this.shows, true);
+    }
   }
 }
