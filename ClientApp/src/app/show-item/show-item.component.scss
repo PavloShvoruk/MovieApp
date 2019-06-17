@@ -1,8 +1,36 @@
-.example-card {
-  max-width: 400px;
+@import "../../scss/media-queries.scss";
+
+.list-content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1.5em;
+  // background-color: #fff;
+  // margin: 0.5rem;
+
+  @include desktop-min {
+    width: 100%;
+  }
+
+  @include tablet-only {
+    width: 100%;
+  }
+
+  @include tablet-min {
+    width: 100%;
+  }
+
+  @include mobile-ls-min {
+    width: 80%;
+  }
+
+  @include mobile-only {
+    width: 60%;
+    padding: 0.5rem;
+  }
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+img {
+  width: 100%;
 }

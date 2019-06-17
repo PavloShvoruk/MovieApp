@@ -1,15 +1,9 @@
 $font-color: #442C2E;
 
-@import '~@angular/material/theming';
-
-$custom-typography: mat-typography-config($font-family: '"B612 Mono", monospace;');
-@include mat-core($custom-typography);
-
 html,
 body {
   box-sizing: border-box;
   height: 100%;
-  color: $font-color;
   background-color: #FFFBFA;
 }
 

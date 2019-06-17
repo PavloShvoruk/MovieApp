@@ -1,12 +1,44 @@
 @import "../../scss/media-queries.scss";
 
 .list-container {
+
   @include desktop-min {
     margin-top: 5rem;
+    margin-left: 2rem;
+  }
+
+  @include tablet-only {
+    margin-top: 5rem;
+
+  }
+
+  @include mobile-ls-min {
+    margin-top: 1rem;
+  }
+
+  @include mobile-only {
+    margin-top: 1rem;
+    margin-left: 3rem;
+  }
+
+  @include tablet-min {
+    margin-top: 3rem;
     margin-left: 3rem;
   }
 }
 
-mat-grid-tile {
-  background: lightblue;
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-item {
+  display: flex;
 }
