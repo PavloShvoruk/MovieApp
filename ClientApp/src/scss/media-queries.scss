@@ -1,11 +1,17 @@
 // Media queries settings
-
+$phone-mini-width: 320px;
 $phone-xs-width: 480px;
 $tablet-p-width: 768px;
 $tablet-l-width: 1024px;
 $desktop-width: 1200px;
 
 // Media
+@mixin mobile-mini {
+  @media (min-width: #{$phone-mini-width}) {
+    @content;
+  }
+}
+
 @mixin mobile-only {
   @media (max-width: #{$tablet-p-width - 1px}) {
     @content;

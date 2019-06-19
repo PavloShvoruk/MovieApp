@@ -1,25 +1,28 @@
-<span class="container">
+<form class="container" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" autocomplete="off">
   <mat-card>
     <mat-card-header>
       <mat-card-title>Login</mat-card-title>
     </mat-card-header>
     <mat-form-field>
-      <input matInput placeholder="Enter your username" [formControl]="username" required>
+      <input matInput placeholder="Enter your username" formControlName="username" required>
       <mat-error *ngIf="username.invalid">{{validateUsername()}}</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" formControlName="password"
+        required>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
+      <mat-error *ngIf="password.invalid">{{validatePassword()}}</mat-error>
     </mat-form-field>
     <mat-card-actions class="register-lign">
       <p class="mat-small">Do not have account? <a mat-button class="mat-small" color="primary">
           Click here!</a></p>
     </mat-card-actions>
     <mat-card-actions>
-      <button class="form-button" mat-raised-button color="primary">Login</button>
+      <button type="submit" class="form-button" mat-raised-button color="primary"
+        [disabled]="!loginForm.valid">Login</button>
     </mat-card-actions>
   </mat-card>
-</span>
+</form>

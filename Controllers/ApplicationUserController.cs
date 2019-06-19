@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using MovieApp.Models;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,6 +89,21 @@ namespace MovieApp.Controllers
             {
                 return BadRequest(new { message = "Username or password is incorrect" });
             }
+        }
+
+        [HttpGet]
+        [Authorize]
+        [Route("profile")]
+        //GET: /api/ApplicationUser/profile
+        public async Task<object> GetUserProfile()
+        {
+            string userId = User.Claims.First(c => c.Type == "UserID").Value;
+            var user = await _userManager.FindByIdAsync(userId);
+            return new
+            {
+                user.Id,
+                user.UserName
+            };
         }
     }
 }

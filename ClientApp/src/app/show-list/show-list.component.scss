@@ -9,16 +9,16 @@
 
   @include tablet-only {
     margin-top: 5rem;
-
   }
 
   @include mobile-ls-min {
     margin-top: 1rem;
+    margin-left: 1.5rem;
   }
 
   @include mobile-only {
     margin-top: 1rem;
-    margin-left: 3rem;
+    margin-left: 1.5rem;
   }
 
   @include tablet-min {
@@ -37,6 +37,16 @@ li {
 .list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @include mobile-ls-min {
+    justify-content: center;
+  }
+
+  @include mobile-only {
+    justify-content: center;
+  }
+
 }
 
 .list-item {

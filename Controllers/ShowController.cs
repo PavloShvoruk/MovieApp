@@ -1,7 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MovieDb.Lib;
 using MovieDb.Lib.Services;
 
 namespace MovieApp.Controllers

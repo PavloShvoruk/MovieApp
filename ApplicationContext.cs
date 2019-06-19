@@ -11,5 +11,8 @@ namespace MovieApp
         }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
+        public DbSet<FavoritiesModel> Favorities {get; set; }
+
     }
 }
