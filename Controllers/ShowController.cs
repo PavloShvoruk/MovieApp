@@ -54,5 +54,6 @@ namespace MovieApp.Controllers
             var result = await _movieService.GetSeasons(id);
             return Ok(result);
         }
+
     }
 }

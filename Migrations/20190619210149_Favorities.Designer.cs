@@ -10,8 +10,8 @@ using MovieApp;
 namespace MovieApp.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20190619203559_Favorties")]
-    partial class Favorties
+    [Migration("20190619210149_Favorities")]
+    partial class Favorities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -193,7 +193,7 @@ namespace MovieApp.Migrations
 
             modelBuilder.Entity("MovieApp.Models.FavoritiesModel", b =>
                 {
-                    b.Property<int>("ShowId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -201,10 +201,12 @@ namespace MovieApp.Migrations
 
                     b.Property<string>("PosterPath");
 
+                    b.Property<int>("ShowID");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("ShowId");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 

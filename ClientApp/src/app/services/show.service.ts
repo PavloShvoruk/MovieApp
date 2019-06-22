@@ -13,7 +13,7 @@ export class ShowService {
     this.http.get(`${this.baseUrl}api/Show/Popular`).subscribe(
       (response: any) => {
         if (shortList) {
-          shows.push(...response.results.slice(0, 4));
+          shows.push(...response.results.slice(0, 6));
         } else {
           shows.push(...response.results);
         }
@@ -28,7 +28,7 @@ export class ShowService {
     this.http.get(`${this.baseUrl}api/Show/TopRated`).subscribe(
       (response: any) => {
         if (shortList) {
-          shows.push(...response.results.slice(0, 4));
+          shows.push(...response.results.slice(0, 6));
         } else {
           shows.push(...response.results);
         }
@@ -43,7 +43,7 @@ export class ShowService {
     this.http.get(`${this.baseUrl}api/Show/Latest`).subscribe(
       (response: any) => {
         if (shortList) {
-          shows.push(...response.results.slice(0, 4));
+          shows.push(...response.results.slice(0, 6));
         } else {
           shows.push(...response.results);
         }

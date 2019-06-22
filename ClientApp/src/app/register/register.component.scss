@@ -1,0 +1,32 @@
+@import "../../scss/media-queries.scss";
+
+.container {
+  max-width: 100%;
+  width: 45rem;
+  height: 35rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+mat-form-field {
+  margin-top: 20px;
+  width: 100%;
+}
+
+mat-card {
+
+  @include mobile-mini {
+    margin-top: 100px;
+  }
+
+  &-header {
+    justify-content: center;
+  }
+}
+
+
+.form-button {
+  width: 100%;
+}

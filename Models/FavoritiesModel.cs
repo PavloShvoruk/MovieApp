@@ -12,7 +12,8 @@ namespace MovieApp.Models
     public class FavoritiesModel
     {
         [Key]
-        public int ShowId { get; set; }
+        public int Id { get; set; }
+        public int ShowID {get; set; }
         [Column(TypeName ="nvarchar(450)")]
         [ForeignKey("ApplicationUser")]
         public string UserId { get; set; }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MovieApp.Migrations
 {
-    public partial class Favorties : Migration
+    public partial class Favorities : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,15 +11,16 @@ namespace MovieApp.Migrations
                 name: "Favorities",
                 columns: table => new
                 {
-                    ShowId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ShowID = table.Column<int>(nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Name = table.Column<string>(nullable: true),
                     PosterPath = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Favorities", x => x.ShowId);
+                    table.PrimaryKey("PK_Favorities", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Favorities_AspNetUsers_UserId",
                         column: x => x.UserId,

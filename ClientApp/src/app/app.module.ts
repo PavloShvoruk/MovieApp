@@ -14,6 +14,8 @@ import { ShowListComponent } from "./show-list/show-list.component";
 import { ShowItemComponent } from "./show-item/show-item.component";
 import { ShowService } from "./services/show.service";
 import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from './register/register.component';
+import { FavoritiesComponent } from './favorities/favorities.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { LoginComponent } from "./login/login.component";
     MainContentComponent,
     ShowListComponent,
     ShowItemComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    FavoritiesComponent
   ],
   imports: [
     BrowserModule,

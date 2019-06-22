@@ -12,5 +12,6 @@ namespace MovieApp.Models
         public string LastName { get; set; }
 
         public ICollection<FavoritiesModel> Favorities { get; set; }
+
     }
 }

@@ -191,7 +191,7 @@ namespace MovieApp.Migrations
 
             modelBuilder.Entity("MovieApp.Models.FavoritiesModel", b =>
                 {
-                    b.Property<int>("ShowId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -199,10 +199,12 @@ namespace MovieApp.Migrations
 
                     b.Property<string>("PosterPath");
 
+                    b.Property<int>("ShowID");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("ShowId");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 

@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: "app-main-nav",
@@ -14,10 +15,18 @@ export class MainNavComponent {
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
 
+  isLoggedIn: boolean;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
+
+  ngOnInit() {
+    this.isLoggedIn = this.authService.isLoggedIn();
+    console.log(this.isLoggedIn);
+  }
 
   placeHolder: string = "Search TV Show...";
   boolData: boolean = false;
@@ -34,6 +43,6 @@ export class MainNavComponent {
 
   logOut() {
     localStorage.removeItem("token");
-    this.router.navigateByUrl("");
+    this.router.navigateByUrl("login");
   }
 }

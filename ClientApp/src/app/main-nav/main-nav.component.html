@@ -39,20 +39,26 @@
         <input (focus)="checkPlaceholder()" (blur)="checkPlaceholder()" matInput placeholder=" {{placeHolder}} ">
       </mat-form-field>
       <span class="spacer"></span>
-
-      <a mat-button class="nav-details" routerLink="login">
+      <a mat-button class="nav-details" *ngIf="!isLoggedIn" routerLink="login">
         <mat-icon>person</mat-icon>LOG IN
       </a>
+      <a mat-button class="nav-details" *ngIf="isLoggedIn" routerLink="login">
+        <mat-icon>favorite</mat-icon>Favorities
+      </a>
+      <a mat-button class="nav-details" *ngIf="isLoggedIn" (click)="logOut()">
+        <mat-icon>exit_to_app</mat-icon>Sign out
+      </a>
+
 
       <!-- <button mat-icon-button [matMenuTriggerFor]="menu" class="nav-details">
         <mat-icon>more_vert</mat-icon>
       </button> -->
-      <mat-menu #menu="matMenu">
+      <!-- <mat-menu #menu="matMenu">
         <button mat-menu-item>
           <mat-icon>notifications_off</mat-icon>
           <span>Disable alerts</span>
         </button>
-      </mat-menu>
+      </mat-menu> -->
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>

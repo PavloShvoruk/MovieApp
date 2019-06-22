@@ -34,16 +34,24 @@ namespace MovieApp.Controllers
 
             var show = new FavoritiesModel()
             {
-                ShowId = model.ShowId,
-                //UserFK = user.Id,
+                ShowID = model.ShowID,
+                UserId = user.Id,
                 Name = model.Name,
                 PosterPath = model.PosterPath
+                
             };
 
-            await _context.Favorities.AddAsync(show);
-            await _context.SaveChangesAsync();
+            try
+            {
+                await _context.Favorities.AddAsync(show);
+                await _context.SaveChangesAsync();
+                return Ok(new { message = "Show added to favorities" });
 
-            return show;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
     }
