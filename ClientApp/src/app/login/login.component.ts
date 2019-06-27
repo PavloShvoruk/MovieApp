@@ -34,9 +34,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit(loginForm: NgForm) {
     this.service.login(loginForm.value).subscribe(
-      (response: any) => {
-        localStorage.setItem("token", response.token);
-        this.router.navigateByUrl("");
+      next => {
+        this.router.navigate(["/"]);
       },
       err => {
         if (err.status == 400) {

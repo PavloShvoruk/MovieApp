@@ -6,6 +6,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ShowService {
   baseUrl: string = "https://localhost:5001/";
+  showQnty: number = 4;
 
   constructor(private http: HttpClient) {}
 
@@ -13,7 +14,7 @@ export class ShowService {
     this.http.get(`${this.baseUrl}api/Show/Popular`).subscribe(
       (response: any) => {
         if (shortList) {
-          shows.push(...response.results.slice(0, 6));
+          shows.push(...response.results.slice(0, this.showQnty));
         } else {
           shows.push(...response.results);
         }
@@ -28,7 +29,7 @@ export class ShowService {
     this.http.get(`${this.baseUrl}api/Show/TopRated`).subscribe(
       (response: any) => {
         if (shortList) {
-          shows.push(...response.results.slice(0, 6));
+          shows.push(...response.results.slice(0, this.showQnty));
         } else {
           shows.push(...response.results);
         }
@@ -43,7 +44,7 @@ export class ShowService {
     this.http.get(`${this.baseUrl}api/Show/Latest`).subscribe(
       (response: any) => {
         if (shortList) {
-          shows.push(...response.results.slice(0, 6));
+          shows.push(...response.results.slice(0, this.showQnty));
         } else {
           shows.push(...response.results);
         }

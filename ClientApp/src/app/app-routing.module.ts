@@ -8,13 +8,16 @@ import { AuthGuard } from "./auth/auth.guard";
 
 const routes: Routes = [
   { path: "", component: MainContentComponent },
+  {
+    path: "favorities", //localhost:5001/favorities
+    component: FavoritiesComponent,
+    runGuardsAndResolvers: "always",
+    canActivate: [AuthGuard],
+    children: []
+  },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  {
-    path: "favorities",
-    component: FavoritiesComponent,
-    canActivate: [AuthGuard]
-  }
+  { path: "**", redirectTo: "", pathMatch: "full" }
 ];
 
 @NgModule({

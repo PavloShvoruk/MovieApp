@@ -50,7 +50,7 @@ export class RegisterComponent implements OnInit {
     this.service.register(registerForm.value).subscribe(
       (response: any) => {
         if (response.succeeded) {
-          this.registerForm.reset();
+          // this.registerForm.reset();
           this.snackBar.open("New user created", "", {
             duration: 1000
           });

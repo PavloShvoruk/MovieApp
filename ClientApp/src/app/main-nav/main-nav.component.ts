@@ -15,18 +15,13 @@ export class MainNavComponent {
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
 
-  isLoggedIn: boolean;
-
   constructor(
     private breakpointObserver: BreakpointObserver,
     private router: Router,
     private authService: AuthService
   ) {}
 
-  ngOnInit() {
-    this.isLoggedIn = this.authService.isLoggedIn();
-    console.log(this.isLoggedIn);
-  }
+  ngOnInit() {}
 
   placeHolder: string = "Search TV Show...";
   boolData: boolean = false;
@@ -44,5 +39,9 @@ export class MainNavComponent {
   logOut() {
     localStorage.removeItem("token");
     this.router.navigateByUrl("login");
+  }
+
+  loggedIn() {
+    return this.authService.loggedIn();
   }
 }
