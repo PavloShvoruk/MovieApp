@@ -9,6 +9,21 @@ import { AuthGuard } from "./auth/auth.guard";
 const routes: Routes = [
   { path: "", component: MainContentComponent },
   {
+    path: "popular",
+    component: MainContentComponent,
+    data: { category: "popular" }
+  },
+  {
+    path: "top",
+    component: MainContentComponent,
+    data: { category: "topRated" }
+  },
+  {
+    path: "latest",
+    component: MainContentComponent,
+    data: { category: "latest" }
+  },
+  {
     path: "favorities", //localhost:5001/favorities
     component: FavoritiesComponent,
     runGuardsAndResolvers: "always",

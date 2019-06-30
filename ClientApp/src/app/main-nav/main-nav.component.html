@@ -4,7 +4,7 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar></mat-toolbar>
     <mat-nav-list>
-      <a class="list-item" mat-list-item routerLink="">
+      <a class="list-item" mat-list-item routerLink="popular">
         <div class="list-item-wrapper">
           <i class="material-icons list-item-icon">
             star_border
@@ -12,7 +12,7 @@
           <span class="list-item-text">Popular</span>
         </div>
       </a>
-      <a class="list-item" mat-list-item routerLink="">
+      <a class="list-item" mat-list-item routerLink="top">
         <div class="list-item-wrapper">
           <i class="material-icons list-item-icon">
             trending_up
@@ -20,7 +20,7 @@
           <span class="list-item-text">Top Rated</span>
         </div>
       </a>
-      <a class="list-item" mat-list-item routerLink="">
+      <a class="list-item" mat-list-item routerLink="latest">
         <div class="list-item-wrapper">
           <i class="material-icons list-item-icon">
             fiber_new

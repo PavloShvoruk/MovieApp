@@ -10,19 +10,19 @@ import { Input } from "@angular/core";
 export class ShowListComponent implements OnInit {
   @Input() category: string;
   @Input() title: string;
+  @Input() shortList: boolean;
 
   shows: any = [];
 
   constructor(private showService: ShowService) {}
 
-  async ngOnInit() {
-    console.log(this.category);
+  ngOnInit() {
     if (this.category == "popular") {
-      await this.showService.getPopularShows(this.shows, true);
+      this.showService.getPopularShows(this.shows, this.shortList);
     } else if (this.category == "topRated") {
-      await this.showService.getTopRatedShows(this.shows, true);
+      this.showService.getTopRatedShows(this.shows, this.shortList);
     } else if (this.category == "latest") {
-      await this.showService.getLatestShows(this.shows, true);
+      this.showService.getLatestShows(this.shows, this.shortList);
     }
   }
 }

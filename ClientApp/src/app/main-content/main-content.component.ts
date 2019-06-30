@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router, ActivatedRoute, Data } from "@angular/router";
 
 @Component({
   selector: "app-main-content",
@@ -20,7 +21,8 @@ export class MainContentComponent implements OnInit {
       query: "latest"
     }
   ];
-  constructor() {}
+  categoryQuery = this.route.snapshot.data["category"];
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {}
 }

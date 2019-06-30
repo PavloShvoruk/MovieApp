@@ -1,6 +1,11 @@
-<div class="container">
+<div class="container" *ngIf="!categoryQuery else detailed">
   <img class="container-image" src="../../assets/MOVIECLASSICSerikweb_1900-800.jpg" alt="Movie collage">
   <div class="container-title">
   </div>
+  <app-show-list *ngFor="let category of categories" [category]="category.query" [title]="category.title"
+    [shortList]="true"></app-show-list>
 </div>
-<app-show-list *ngFor="let category of categories" [category]="category.query" [title]="category.title"></app-show-list>
+
+<ng-template #detailed>
+  <app-show-list [category]="categoryQuery" [shortList]="false"></app-show-list>
+</ng-template>

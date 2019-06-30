@@ -6,6 +6,12 @@
   flex-direction: column;
   width: 100%;
   margin: 1.5em;
+  transition: transform .5s;
+  cursor: pointer;
+
+  &__title {
+    margin-top: 12px;
+  }
 
   @include desktop-min {
     width: 100%;
@@ -31,4 +37,9 @@
 
 img {
   width: 100%;
+}
+
+.list-content:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
 }
