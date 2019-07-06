@@ -55,5 +55,12 @@ namespace MovieApp.Controllers
             return Ok(result);
         }
 
+        // GET: api/Show/Details/id
+        [HttpGet("Details/{id}", Name = "GetShowDetails")]
+        public async Task<IActionResult> GetShowDetailsAsync(int id)
+        {
+            var result = await _movieService.GetShowDetails(id);
+            return Ok(result);
+        }
     }
 }

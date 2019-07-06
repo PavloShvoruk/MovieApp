@@ -1,11 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { ShowDetails } from "../models/show-details";
+import { environment } from "src/environments/environment";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class ShowService {
-  baseUrl: string = "https://localhost:5001/";
+  baseUrl = environment.apiUrl;
   showQnty: number = 4;
 
   constructor(private http: HttpClient) {}
@@ -53,5 +56,9 @@ export class ShowService {
         console.log(error);
       }
     );
+  }
+
+  getShowDetails(id: string): Observable<ShowDetails> {
+    return this.http.get<ShowDetails>(`${this.baseUrl}api/Show/Details/${id}`);
   }
 }

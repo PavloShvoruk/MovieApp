@@ -18,6 +18,7 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { FavoritiesComponent } from "./favorities/favorities.component";
 import { AuthGuard } from "./auth/auth.guard";
+import { ShowDetailsComponent } from './show-details/show-details.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -32,7 +33,8 @@ export function tokenGetter() {
     ShowItemComponent,
     LoginComponent,
     RegisterComponent,
-    FavoritiesComponent
+    FavoritiesComponent,
+    ShowDetailsComponent
   ],
   imports: [
     BrowserModule,

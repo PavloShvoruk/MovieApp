@@ -5,6 +5,7 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { FavoritiesComponent } from "./favorities/favorities.component";
 import { AuthGuard } from "./auth/auth.guard";
+import { ShowDetailsComponent } from "./show-details/show-details.component";
 
 const routes: Routes = [
   { path: "", component: MainContentComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
+  { path: "show/:id", component: ShowDetailsComponent },
   { path: "**", redirectTo: "", pathMatch: "full" }
 ];
 
